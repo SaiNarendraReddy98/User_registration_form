@@ -28,6 +28,7 @@ urlpatterns = [
     path('user_logout/',user_logout,name='user_logout'),
     path('profile_display/',profile_display,name='profile_display'),
     path('reset_password/',reset_password,name='reset_password'),
+    path('change_password/',change_password,name='change_password'),
 
 
     

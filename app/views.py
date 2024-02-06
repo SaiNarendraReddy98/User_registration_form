@@ -107,3 +107,15 @@ def reset_password(request):
 
 
     return render(request,'reset_password.html')
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        pw = request.POST['pw']
+        username = request.session.get('username')
+        UO = User.objects.get(username=username)
+        UO.set_password(pw)
+        UO.save()
+        return HttpResponse('<center>Password changed successfully')
+    
+    return render(request,'change_password.html')
